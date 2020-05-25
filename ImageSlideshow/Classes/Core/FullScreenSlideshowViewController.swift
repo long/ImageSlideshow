@@ -117,6 +117,6 @@ open class FullScreenSlideshowViewController: UIViewController {
             pageSelected(slideshow.currentPage)
         }
 
-        dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -275,12 +275,14 @@ class ZoomOutAnimator: ZoomAnimator, UIViewControllerAnimatedTransitioning {
 
         toViewController.view.frame = transitionContext.finalFrame(for: toViewController)
         toViewController.view.alpha = 0
+        /* DO NOT ADD presenting view into container (removes it from existinng controller hierarchy)
         containerView.addSubview(toViewController.view)
         #if swift(>=4.2)
         containerView.sendSubviewToBack(toViewController.view)
         #else
         containerView.sendSubview(toBack: toViewController.view)
         #endif
+        */
         var transitionViewInitialFrame: CGRect
         if let currentSlideshowItem = fromViewController.slideshow.currentSlideshowItem {
             if let image = currentSlideshowItem.imageView.image {
